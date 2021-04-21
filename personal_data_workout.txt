@@ -1,0 +1,29 @@
+#!usr/bin/env python3
+import cgi
+
+with open('C:\\Users\\Anastasia Siedykh\\Documents\\Backup\\python_projects\\grindeks_company_main\\users.txt',
+          'r') as file:
+    user1_login = file.readline().rstrip('\n')
+    user1_password = file.readline().rstrip('\n')
+    user2_login = file.readline().rstrip('\n')
+    user2_password = file.readline()
+dictionary_users = {user1_login: user1_password, user2_login: user2_password}
+users_logins = [user1_login, user2_login]
+personal_data_form = cgi.FieldStorage()
+login = personal_data_form.getfirst("login","Enter login")
+password = personal_data_form.getfirst("password","Enter password")
+
+cabinet = "C:\\Users\\Anastasia Siedykh\\Documents\\Backup\\grindeks_company_main_new\\ukraine\\my_site"
+ind = 0
+print("Content-type: text/html")
+print()
+if login in users_logins:
+    ind = users_logins.index(login)
+if login == users_logins[ind]:
+    if password == dictionary_users.get(login):
+        print("Content-type: text/html")
+    else:
+        print('Password is not correct\n')
+else:
+    print('Login not ok\n')
+    #todo back button
