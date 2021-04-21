@@ -9,9 +9,11 @@ def index(request):
     return render(request,  "first_app/index.html")
 #return render(request, "first_app/index.html", context=data)
 
+def cabinet(request):
+    return render(request,  "first_app/cabinet.html")
 
 def about(request):
-    return HttpResponse("About")
+    return render(request,  "first_app/about.html")
 
 
 def contact(request):

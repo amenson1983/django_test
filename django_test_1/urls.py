@@ -17,6 +17,9 @@ from django.urls import path
 from first_app import views
 
 urlpatterns = [
+
+    path('cabinet/', views.cabinet),
+    path('about/', views.about),
     path('', views.index)
 
 ]
