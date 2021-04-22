@@ -7,18 +7,22 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
 <body>
-    <div class="four"><h1>LOGIN</h1></div>
-    <form>   
-       <fieldset>
-           <p style="font-family:cursive;font-size: 20px;font-weight: 500">Your login:     <input type="text" name="login"></p> 
-           <p style="font-family:cursive;font-size: 20px">Your password:<input type="text" name="password"></p>  
+   <div class="four"><h1>LOGIN</h1></div>
+        <form method="POST">   
+      {% csrf_token %}
+       <fieldset >
+           <p style="font-family:cursive;font-size: 20px;font-weight: 500">{{ form }} </p> 
+
              
-           <button type="submit">Submit</button>
+           <button type="submit" value="Send" >Submit</button>
        
        </fieldset>     
     <img src="images/image002.png"> 
 
     </form>
-
+    <style>
+  body { background: url({% static "images/login_background.png"%}) no-repeat;
+        background-size: 100%;}
+</style>
 </body>
 </html>

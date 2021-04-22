@@ -10,9 +10,6 @@ legend {
   padding: 5px 10px;
   
 }
-body {
-    bg-image : url("images/login_background.png")
-}
 
 input {
   margin: 10px;
